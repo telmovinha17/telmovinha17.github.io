@@ -1,0 +1,765 @@
+/* Minimalist Motorsport Style */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #60a5fa;
+    --dark: #1e293b;
+    --light: #f1f5f9;
+    --grey: #64748b;
+    --accent: #273e50;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--dark);
+    color: var(--light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* Navigation */
+nav {
+    background: var(--accent);
+    border-bottom: 1px solid #1e293b;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+    color: var(--light);
+    transition: opacity 0.3s ease;
+}
+
+.nav-brand:hover {
+    opacity: 0.8;
+}
+
+.nav-logo {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.nav-brand:hover .nav-logo {
+    transform: scale(1.1);
+}
+
+.nav-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--light);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    color: var(--light);
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle racing line decoration */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 1;
+}
+
+.hero-logo {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 2rem;
+    animation: float 3s ease-in-out infinite;
+    display: block;
+}
+
+.hero-photo {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-fallback {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    display: none;
+}
+
+.hero-photo.no-image {
+    background: var(--accent);
+}
+
+.hero-photo.no-image .profile-photo {
+    display: none;
+}
+
+.hero-photo.no-image .photo-fallback {
+    display: block;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--grey);
+    margin-bottom: 2.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: var(--primary);
+    color: var(--dark);
+}
+
+.under-construction {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    margin-top: 1.5rem;
+    border: 2px solid #f59e0b;
+    border-radius: 4px;
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+/* Sections */
+section {
+    padding: 5rem 0;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: -1px;
+}
+
+section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+/* About Section */
+.about {
+    background: var(--accent);
+    border-top: 1px solid #1e293b;
+    border-bottom: 1px solid #1e293b;
+}
+
+.about p {
+    font-size: 1.1rem;
+    color: var(--grey);
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+/* Skills Grid */
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.skill-card {
+    padding: 2rem 2.5rem;
+    border: 1px solid #1e293b;
+    background: var(--dark);
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.skill-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.skill-card p {
+    color: var(--grey);
+    font-size: 0.95rem;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    padding: 2.5rem;
+    border: 1px solid #1e293b;
+    background: var(--accent);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+}
+
+.project-card h3 {
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-card .year {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--grey);
+    margin-bottom: 1rem;
+}
+
+.project-card p {
+    color: var(--grey);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-tags span {
+    font-size: 0.8rem;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 0.35rem 0.75rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-link {
+    font-size: 0.9rem;
+    color: var(--primary);
+    border-bottom: 1px solid var(--primary);
+    padding-bottom: 0.2rem;
+}
+
+/* About Page */
+.about-content {
+    background: var(--dark);
+}
+
+.info-card {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border: 1px solid #1e293b;
+    background: var(--accent);
+}
+
+.info-card h2 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.info-card p {
+    color: var(--grey);
+    line-height: 1.8;
+}
+
+/* Expertise Section */
+.expertise {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.expertise-item {
+    padding: 2rem;
+    border: 1px solid #1e293b;
+    background: var(--accent);
+}
+
+.expertise-item h3 {
+    color: var(--primary);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.expertise-list {
+    list-style: none;
+}
+
+.expertise-list li {
+    color: var(--grey);
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.expertise-list li::before {
+    content: '—';
+    color: var(--primary);
+    margin-right: 0.75rem;
+}
+
+/* Artwork Grid */
+.artwork-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.artwork-card {
+    padding: 2rem;
+    border: 1px solid #1e293b;
+    background: var(--accent);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.artwork-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+}
+
+.artwork-placeholder {
+    width: 100%;
+    height: 160px;
+    background: linear-gradient(135deg, #1e293b, #334155);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.artwork-card h3 {
+    color: var(--primary);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.artwork-card p {
+    color: var(--grey);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.artwork-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--grey);
+}
+
+/* Pit Garage Section */
+.pit-garage {
+    background: var(--accent);
+    border-bottom: 1px solid #1e293b;
+}
+
+.pit-garage h2 {
+    margin-bottom: 1.5rem;
+}
+
+.pit-garage p {
+    color: var(--grey);
+    margin-bottom: 3rem;
+    max-width: 700px;
+}
+
+.stats-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem;
+    border: 1px solid #1e293b;
+    border-radius: 4px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--grey);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* Track Record Section */
+.track-record {
+    background: var(--dark);
+}
+
+.track-record h2 {
+    margin-bottom: 3rem;
+}
+
+.victory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.victory-card {
+    padding: 2rem;
+    border: 1px solid var(--accent);
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.05), transparent);
+    transition: all 0.3s ease;
+}
+
+.victory-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+}
+
+.victory-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.victory-card .sector {
+    color: var(--grey);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.victory-card p {
+    color: var(--grey);
+    margin-bottom: 1.5rem;
+}
+
+.track-link {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: opacity 0.3s ease;
+}
+
+.track-link:hover {
+    opacity: 0.7;
+}
+
+/* Pit Strategy Section */
+.pit-strategy {
+    background: var(--accent);
+}
+
+.pit-strategy h2 {
+    margin-bottom: 3rem;
+}
+
+.strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.strategy-item {
+    padding: 2.5rem;
+    border: 1px solid #1e293b;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.strategy-item:hover {
+    border-color: var(--primary);
+    background: rgba(96, 165, 250, 0.08);
+}
+
+.strategy-item h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.strategy-item p {
+    color: var(--grey);
+    line-height: 1.7;
+}
+
+.race-motto {
+    font-style: italic;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Markdown Content Style */
+.markdown-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.markdown-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    letter-spacing: -0.5px;
+    color: var(--light);
+}
+
+.markdown-content h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--accent);
+    color: var(--primary);
+    letter-spacing: -0.3px;
+}
+
+.markdown-content h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    letter-spacing: 0.3px;
+}
+
+.markdown-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--light);
+}
+
+.markdown-content ul {
+    list-style: none;
+    margin-bottom: 2rem;
+    padding-left: 0;
+}
+
+.markdown-content li {
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--light);
+    position: relative;
+}
+
+.markdown-content li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Artwork Page */
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.intro-text {
+    font-size: 1.05rem;
+    color: var(--grey);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    line-height: 1.7;
+}
+
+.game-section {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary);
+    color: var(--primary);
+    letter-spacing: 0.3px;
+}
+
+/* Footer */
+footer {
+    background: var(--accent);
+    border-top: 1px solid #1e293b;
+    padding: 2rem 0;
+    text-align: center;
+    color: var(--grey);
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .nav-container {
+        padding: 1rem 1.5rem;
+    }
+
+    .skills,
+    .projects-grid,
+    .expertise,
+    .artwork-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .project-links {
+        flex-direction: column;
+    }
+
+    .project-link {
+        display: block;
+        padding-bottom: 0.5rem;
+    }
+}
