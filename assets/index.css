@@ -1,0 +1,249 @@
+/* Hero Section */
+.hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+/* Subtle racing line decoration */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 1;
+}
+
+.hero-logo {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 2rem;
+    animation: float 3s ease-in-out infinite;
+    display: block;
+}
+
+.hero-photo {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-fallback {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    display: none;
+}
+
+.hero-photo.no-image {
+    background: var(--accent);
+}
+
+.hero-photo.no-image .profile-photo {
+    display: none;
+}
+
+.hero-photo.no-image .photo-fallback {
+    display: block;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--grey);
+    margin-bottom: 2.5rem;
+}
+
+/* Pit Garage Section */
+.pit-garage {
+    background: var(--accent);
+    border-bottom: 1px solid #1e293b;
+}
+
+.pit-garage h2 {
+    margin-bottom: 1.5rem;
+}
+
+.pit-garage p {
+    color: var(--grey);
+    margin-bottom: 3rem;
+    max-width: 700px;
+}
+
+.stats-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem;
+    border: 1px solid #1e293b;
+    border-radius: 4px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--grey);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* Track Record Section */
+.track-record {
+    background: var(--dark);
+}
+
+.track-record h2 {
+    margin-bottom: 3rem;
+}
+
+.victory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.victory-card {
+    padding: 2rem;
+    border: 1px solid var(--accent);
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.05), transparent);
+    transition: all 0.3s ease;
+}
+
+.victory-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+}
+
+.victory-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.victory-card .sector {
+    color: var(--grey);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.victory-card p {
+    color: var(--grey);
+    margin-bottom: 1.5rem;
+}
+
+.track-link {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: opacity 0.3s ease;
+}
+
+.track-link:hover {
+    opacity: 0.7;
+}
+
+/* Pit Strategy Section */
+.pit-strategy {
+    background: var(--accent);
+}
+
+.pit-strategy h2 {
+    margin-bottom: 3rem;
+}
+
+.strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.strategy-item {
+    padding: 2.5rem;
+    border: 1px solid #1e293b;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.strategy-item:hover {
+    border-color: var(--primary);
+    background: rgba(96, 165, 250, 0.08);
+}
+
+.strategy-item h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.strategy-item p {
+    color: var(--grey);
+    line-height: 1.7;
+}
+
+.race-motto {
+    font-style: italic;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}

@@ -2,7 +2,7 @@ const headerHTML = `
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-brand">
-                <img src="images/logo.png" alt="Telmo Vinha Logo" class="nav-logo">
+                <img src="./images/logo.png" alt="Telmo Vinha Logo" class="nav-logo">
                 <span class="nav-text">Telmo Vinha</span>
             </a>
             <ul class="nav-links">
@@ -15,6 +15,12 @@ const headerHTML = `
 `;
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Lock scroll on homepage
+    const page = window.location.pathname.split('/').pop() || 'index.html';
+    if (page === 'index.html') {
+        document.body.classList.add('locked');
+    }
+
     const headerPlaceholder = document.getElementById('header-placeholder');
     if (headerPlaceholder) {
         headerPlaceholder.innerHTML = headerHTML;
