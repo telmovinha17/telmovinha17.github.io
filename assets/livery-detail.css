@@ -1,0 +1,168 @@
+/* Livery Detail Pages */
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+    color: var(--light);
+}
+
+.intro-text {
+    font-size: 1.05rem;
+    color: var(--grey);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    line-height: 1.7;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.back-link:hover {
+    opacity: 0.8;
+}
+
+/* Hero Section */
+.hero-image {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 60%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Details Section */
+.details-section {
+    margin: 3rem 0;
+}
+
+.details-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    letter-spacing: -0.5px;
+}
+
+.details-box {
+    background: var(--accent);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #1e293b;
+}
+
+.details-box p {
+    margin: 0.75rem 0;
+    line-height: 1.6;
+}
+
+.details-box strong {
+    color: var(--primary);
+}
+
+/* Gallery Section */
+.gallery-section {
+    margin: 3rem 0;
+}
+
+.gallery-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    letter-spacing: -0.5px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 calc(5vw + 2rem);
+}
+
+.gallery-item {
+    background: var(--accent);
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-placeholder {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    padding: 2rem;
+    text-align: center;
+    color: var(--grey);
+    font-size: 0.95rem;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Description Section */
+.description-section {
+    margin: 3rem 0;
+}
+
+.description-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    letter-spacing: -0.5px;
+}
+
+.description-section p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--light);
+}
+
+/* Main Content */
+main {
+    margin-bottom: 8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .details-section h2,
+    .gallery-section h2,
+    .description-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}

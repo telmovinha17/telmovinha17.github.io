@@ -1,0 +1,108 @@
+/* Artwork Page */
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+main {
+    margin-bottom: 8rem;
+}
+
+.intro-text {
+    font-size: 1.05rem;
+    color: var(--grey);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    line-height: 1.7;
+}
+
+.game-section {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary);
+    color: var(--primary);
+    letter-spacing: 0.3px;
+}
+
+/* Artwork Grid */
+.artwork-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+
+    /* === Full-width breakout solution === */
+    /* 1. Set width to the full viewport width */
+    width: 100vw;
+    position: relative;
+    /* 2. Center the full-width element on the page */
+    left: 50%;
+    transform: translateX(-50%);
+    /* 3. Re-apply horizontal spacing to align grid content with the container above */
+    padding: 0 calc(5vw + 2rem);
+}
+
+.artwork-card {
+    padding: 2rem;
+    border: 1px solid #1e293b;
+    background: var(--accent);
+    transition: all 0.3s ease;
+}
+
+.artwork-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+}
+
+.artwork-placeholder {
+    width: 100%;
+    height: 160px;
+    background: linear-gradient(135deg, #1e293b, #334155);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.artwork-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    background-color: #334155;
+    border-radius: 4px; /* Optional: adds slightly rounded corners to the image */
+}
+
+.artwork-card h3 {
+    color: var(--primary);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.artwork-card p {
+    color: var(--grey);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.artwork-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--grey);
+}
+
+@media (max-width: 768px) {
+    .artwork-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}

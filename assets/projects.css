@@ -1,0 +1,110 @@
+/* Projects Section */
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+main {
+    margin-bottom: 8rem;
+}
+
+.intro-text {
+    font-size: 1.05rem;
+    color: var(--grey);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    line-height: 1.7;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+
+    /* === Full-width breakout solution === */
+    /* 1. Set width to the full viewport width */
+    width: 100vw;
+    position: relative;
+    /* 2. Center the full-width element on the page */
+    left: 50%;
+    transform: translateX(-50%);
+    /* 3. Re-apply horizontal spacing to align grid content with the container above */
+    padding: 0 calc(5vw + 2rem);
+}
+
+.project-card {
+    padding: 2rem;
+    border: 1px solid #1e293b;
+    background: var(--accent);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+}
+
+.project-card h3 {
+    color: var(--primary);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.project-card .year {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--grey);
+    margin-bottom: 1rem;
+}
+
+.project-card p {
+    color: var(--grey);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-tags span {
+    font-size: 0.8rem;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 0.35rem 0.75rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-link {
+    font-size: 0.9rem;
+    color: var(--primary);
+    border-bottom: 1px solid var(--primary);
+    padding-bottom: 0.2rem;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .project-links {
+        flex-direction: column;
+    }
+
+    .project-link {
+        display: block;
+        padding-bottom: 0.5rem;
+    }
+}
